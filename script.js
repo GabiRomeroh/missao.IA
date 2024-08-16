@@ -14,7 +14,7 @@ const perguntas = [
             "Antártica",
             "Saara"
         ],
-        correta: 2// A segunda alternativa é a correta
+        correta: 1// A segunda alternativa é a correta
     },
     {
         enunciado: "Qual a fórmula da glicose?",
@@ -22,7 +22,7 @@ const perguntas = [
             "C6H12O6",
             "C10H16N5013P3"
         ],
-        correta: 1 // A primeria alternativa é a correta
+        correta: 0// A primeria alternativa é a correta
     },
     {
         enunciado: "Qual empresa desenvolveu o sistema Windows?",
@@ -30,7 +30,8 @@ const perguntas = [
             "Apple",
             "Microsoft"
         ],
-        correta: 1
+        correta: 0 // A primeria alternativa é a correta
+    },
     },
     {
         enunciado: "Quem é o capitão do navio Pérola Negra?",
@@ -38,7 +39,7 @@ const perguntas = [
             "Jack Skellington",
             "Jack Sparrow"
         ],
-        correta: 2
+        correta: 1// A segunda alternativa é a correta
     },
     {
         enunciado: "Qual o maior oceno do planeta Terra?",
@@ -46,7 +47,7 @@ const perguntas = [
             "Oceano Pacífico",
             "Oceano Atlântico"
         ],
-        correta: 1
+        correta: 0 // A primeria alternativa é a correta
     }
 ];
 
