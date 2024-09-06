@@ -56,3 +56,33 @@ const perguntas = [
 let atual = 0;
 let perguntaAtual;
 let pontuacao = 0; // Inicie a pontuação em 0
+
+let atual = 0
+let pergutaAtual;
+let pontuacao = 0;
+
+//FUNÇÃO MOSTRAR PERGUNTAS
+function mostrarPergunta() {
+    perguntaAtual = perguntas[atual];
+    caixaPerguntas.textContent = perguntaAtual.enunciado;
+    caixaAlternativas.innerHTML = "";
+
+    pergutaAtual.alternativas.forEach((alternativas, index) => {
+        const botao = document.createElement("button");
+        botao.addEventListener("click", () => verificaResposta(index));
+        caixaAlternativas.appendChild(botao);
+    });
+}
+
+//função vertical respota
+function verificaResposta(Selcione) [{
+    if (seleciona === perguntaAtual.correta){
+        pontuação++;
+    }
+    atual++;
+
+    if(atual< perguntaAtual.length) {
+        mostrarPergunta();
+    }
+
+}]
