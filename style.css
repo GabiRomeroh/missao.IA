@@ -3,15 +3,15 @@
     /* cor do fundo */
     --cor-fundo: #ffffff;
         /* cores da caixa principal */
-    --cor-principal: #7e0cdbd0;
+    --cor-principal: #cf0bf7;
     /* cores da caixa secundaria */
-    --cor-secundaria: #9571d8;
+    --cor-secundaria: #212333;
         /* cor texto quest/Buttom */
-    --cor-destaque: #ff0000;
+    --cor-destaque: #ffd700;
         /* cor do texto pergunta */
     --cor-texto: #fafafa;
         /* cor fadebuttom */
-    --cor-fadeButtom: #a60de3;
+    --cor-fadeButtom: #e30d6d;
 }
 
 /* Configuração do estilo do corpo da página */

@@ -10,13 +10,13 @@ const perguntas = [
     {
         enunciado: "Qual o maior deserto do mundo?",
         alternativas: [
-            "Saara.",
-            "Antártica."
+            "Saara",
+            "Antártica"
         ],
         correta: 0 // A primeira alternativa é a correta
     },
     {
-        enunciado: "Qual a fórmula qímica da glicose?",
+        enunciado: "Qual a fórmula química da glicose ?",
         alternativas: [
             "C3H2O6",
             "C6H12O6"
@@ -24,26 +24,26 @@ const perguntas = [
         correta: 1 // A segunda alternativa é a correta
     },
     {
-        enunciado: "Qual o nome do Capitão do Navio Pérola Negra?",
+        enunciado: "Qual é o maior planeta do nosso sistema solar?",
         alternativas: [
-            "Jack Reacher",
-            "Jack Sparrow"
+            "Saturno",
+            "Júpiter"
         ],
         correta: 1
     },
     {
-        enunciado: "Qual o maior oceano do mundo?",
+        enunciado: "Quem é o capitão do navio Pérola Negra?",
         alternativas: [
-            "Pacífico",
-            "Atlântico"
+            "Jack Sparrow",
+            "Jack Reacher"
         ],
         correta: 0
     },
     {
-        enunciado: "Qual é o país mais populoso do mundo?",
+        enunciado: "Quem pintou a Mona Lisa?",
         alternativas: [
-            "China",
-            "Rússia"
+            "Leonardo da Vinci",
+            "Vincent van Gogh"
         ],
         correta: 0
     }
