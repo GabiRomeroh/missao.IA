@@ -12,9 +12,15 @@ const perguntas = [
         alternativas: [
             "15 anos",
             "20 anos"
+   imagem: "url_da_imagem_do_cachorro.jpg" // Adicione a URL da image
+            
+            ];
+            
+
+
         ],
         correta: 0 // A primeira alternativa é a correta
-    },
+
     {
         enunciado: "Quantos dias há em um ano bissexto?",
         alternativas: [
