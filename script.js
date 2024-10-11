@@ -1,12 +1,11 @@
-
-// Seleciona os elementos HTML que manipulados
+// Seleciona os elementos HTML que serão manipulados
 const caixaPrincipal = document.querySelector(".caixa-principal");
 const caixaPerguntas = document.querySelector(".caixa-perguntas");
 const caixaAlternativas = document.querySelector(".caixa-alternativas");
 const caixaResultado = document.querySelector(".caixa-resultado");
 const textoResultado = document.querySelector(".texto-resultado");
 
-//Arry de objeto contendo as perguntas e alternativas
+// Array de objetos contendo as perguntas e alternativas
 const perguntas = [
     {
         enunciado: "Qual é o maior deserto do mundo?",
@@ -14,7 +13,7 @@ const perguntas = [
             "Antártica",
             "Saara"
         ],
-        correta: 1// A segunda alternativa é a correta
+        correta: 0 // A primeira alternativa é a correta
     },
     {
         enunciado: "Qual a fórmula da glicose?",
@@ -22,7 +21,7 @@ const perguntas = [
             "C6H12O6",
             "C10H16N5013P3"
         ],
-        correta: 0// A primeria alternativa é a correta
+        correta: 0 // A primeira alternativa é a correta
     },
     {
         enunciado: "Qual empresa desenvolveu o sistema Windows?",
@@ -30,8 +29,7 @@ const perguntas = [
             "Apple",
             "Microsoft"
         ],
-        correta: 0 // A primeria alternativa é a correta
-    },
+        correta: 1 // A segunda alternativa é a correta
     },
     {
         enunciado: "Quem é o capitão do navio Pérola Negra?",
@@ -39,125 +37,39 @@ const perguntas = [
             "Jack Skellington",
             "Jack Sparrow"
         ],
-        correta: 1// A segunda alternativa é a correta
+        correta: 1 // A segunda alternativa é a correta
     },
     {
-        enunciado: "Qual o maior oceno do planeta Terra?",
+        enunciado: "Qual o maior oceano do planeta Terra?",
         alternativas: [
             "Oceano Pacífico",
             "Oceano Atlântico"
         ],
-        correta: 0 // A primeria alternativa é a correta
+        correta: 0 // A primeira alternativa é a correta
     }
 ];
 
-// inicializa o índice da pergunta atual e a pontuação
-
+// Inicializa o índice da pergunta atual e a pontuação
 let atual = 0;
-let perguntaAtual;
-let pontuacao = 0; // Inicie a pontuação em 0
-
-let atual = 0
-let pergutaAtual;
 let pontuacao = 0;
 
-//FUNÇÃO MOSTRAR PERGUNTAS
+// FUNÇÃO MOSTRAR PERGUNTAS
 function mostrarPergunta() {
-    perguntaAtual = perguntas[atual];
+    const perguntaAtual = perguntas[atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
     caixaAlternativas.innerHTML = "";
 
-    pergutaAtual.alternativas.forEach((alternativas, index) => {
+    perguntaAtual.alternativas.forEach((alternativa, index) => {
         const botao = document.createElement("button");
-        botao.addEventListener("click", () => verificaResposta(index));
-        caixaAlternativas.appendChild(botao);
-    });
-}
-
-//função vertical respota
-function verificaResposta(Selcione) [{
-    if (seleciona === perguntaAtual.correta){
-        pontuação++;
-    }
-    atual++;
-
-    if(atual< perguntaAtual.length) {
-        mostrarPergunta();
-    }
-
-}]
-
-// Seleciona os elementos HTML que manipulados
-const caixaPrincipal = document.querySelector(".caixa-principal");
-const caixaPerguntas = document.querySelector(".caixa-perguntas");
-const caixaAlternativas = document.querySelector(".caixa-alternativas");
-const caixaResultado = document.querySelector(".caixa-resultado");
-const textoResultado = document.querySelector(".texto-resultado");
-
-//Arry de objeto contendo as perguntas e alternativas
-const perguntas = [
-    {
-        enunciado: "Qual a idade máxima que um cachorro pode chegar?",
-        alternativas: [
-            "15 anos",
-            "20 anos"
-        ],
-        correta: 0 // A primeira alternativa é a correta
-    },
-    {
-        enunciado: "Quantos dias há em um ano bissexto?",
-        alternativas: [
-            "365",
-            "366"
-        ],
-        correta: 1 // A segunda alternativa é a correta
-    },
-    {
-        enunciado: "Qual é o maior planeta do nosso sistema solar?",
-        alternativas: [
-            "Terra",
-            "Júpiter"
-        ],
-        correta: 1
-    },
-    {
-        enunciado: "Qual é a capital da França?",
-        alternativas: [
-            "Paris",
-            "Londres"
-        ],
-        correta: 0
-    },
-    {
-        enunciado: "Qual é a fórmula química da água?",
-        alternativas: [
-            "H2O",
-            "CO2"
-        ],
-        correta: 0
-    }
-];
-
-let atual = 0
-let pergutaAtual;
-let pontuacao = 0;
-
-//FUNÇÃO MOSTRAR PERGUNTAS
-function mostrarPergunta() {
-    perguntaAtual = perguntas[atual];
-    caixaPerguntas.textContent = perguntaAtual.enunciado;
-    caixaAlternativas.innerHTML = "";
-
-    pergutaAtual.alternativas.forEach((alternativas, index) => {
-        const botao = document.createElement("button");
+        botao.textContent = alternativa; // Adiciona o texto da alternativa ao botão
         botao.addEventListener("click", () => verificaResposta(index));
         caixaAlternativas.appendChild(botao);
     });
 }
 
 // FUNÇÃO VERIFICAR RESPOSTA
-function vereficaResposta(Seleciona) {
-    if (selecionda === pergutaAtual.correta) {
+function verificaResposta(seleciona) {
+    if (seleciona === perguntas[atual].correta) {
         pontuacao++;
     }
     atual++;
@@ -165,90 +77,17 @@ function vereficaResposta(Seleciona) {
     if (atual < perguntas.length) {
         mostrarPergunta();
     } else {
-        mostarResultado();
+        mostrarResultado();
     }
 }
 
-
-
-// Seleciona os elementos HTML que manipulados
-const caixaPrincipal = document.querySelector(".caixa-principal");
-const caixaPerguntas = document.querySelector(".caixa-perguntas");
-const caixaAlternativas = document.querySelector(".caixa-alternativas");
-const caixaResultado = document.querySelector(".caixa-resultado");
-const textoResultado = document.querySelector(".texto-resultado");
-
-//Arry de objeto contendo as perguntas e alternativas
-const perguntas = [
-    {
-        enunciado: "Qual a idade máxima que um cachorro pode chegar?",
-        alternativas: [
-            "15 anos",
-            "20 anos"
-        ],
-        correta: 0 // A primeira alternativa é a correta
-    },
-    {
-        enunciado: "Quantos dias há em um ano bissexto?",
-        alternativas: [
-            "365",
-            "366"
-        ],
-        correta: 1 // A segunda alternativa é a correta
-    },
-    {
-        enunciado: "Qual é o maior planeta do nosso sistema solar?",
-        alternativas: [
-            "Terra",
-            "Júpiter"
-        ],
-        correta: 1
-    },
-    {
-        enunciado: "Qual é a capital da França?",
-        alternativas: [
-            "Paris",
-            "Londres"
-        ],
-        correta: 0
-    },
-    {
-        enunciado: "Qual é a fórmula química da água?",
-        alternativas: [
-            "H2O",
-            "CO2"
-        ],
-        correta: 0
-    }
-];
-
-let atual = 0
-let pergutaAtual;
-let pontuacao = 0;
-
-//FUNÇÃO MOSTRAR PERGUNTAS
-function mostrarPergunta() {
-    perguntaAtual = perguntas[atual];
-    caixaPerguntas.textContent = perguntaAtual.enunciado;
-    caixaAlternativas.innerHTML = "";
-
-    pergutaAtual.alternativas.forEach((alternativas, index) => {
-        const botao = document.createElement("button");
-        botao.addEventListener("click", () => verificaResposta(index));
-        caixaAlternativas.appendChild(botao);
-    });
+// FUNÇÃO MOSTRAR RESULTADO
+function mostrarResultado() {
+    caixaPerguntas.style.display = "none";
+    caixaAlternativas.style.display = "none";
+    caixaResultado.style.display = "block"; // Mostra a caixa de resultado
+    textoResultado.textContent = `Você acertou ${pontuacao} de ${perguntas.length} perguntas!`;
 }
 
-// FUNÇÃO VERIFICAR RESPOSTA
-function vereficaResposta(Seleciona) {
-    if (selecionda === pergutaAtual.correta) {
-        pontuacao++;
-    }
-    atual++;
-
-    if (atual < perguntas.length) {
-        mostrarPergunta();
-    } else {
-        mostarResultado();
-    }
-}
+// Inicia o quiz mostrando a primeira pergunta
+mostrarPergunta();

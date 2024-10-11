@@ -1,27 +1,4 @@
-/* DEFININÇÃO DAS VARIAVEIS CSS PARA CORES*/
-:root {
-    --cor-fundo: #064070;
-    --cor-principal: #0b0d20;
-    --cor-secundaria: #212333;
-    --cor-destaque: #e22b2b;
-    --cor-texto: #e42626;
-    --cor-fadeButtom: #e29716;
-}
-
-/*CONFIGURAÇÃO DO ESTILO DO CORPO DA PAGINA*/
-body {
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-
-/* DEFININÇÃO DAS VARIAVEIS CSS PARA CORES*/
+/* DEFINIÇÃO DAS VARIÁVEIS CSS PARA CORES */
 :root {
     --cor-fundo: #064070;
     --cor-principal: #0b0d20;
@@ -31,7 +8,7 @@ body {
     --cor-fadeButtom: #e29716;
 }
 
-/*CONFIGURAÇÃO DO ESTILO DO CORPO DA PAGINA*/
+/* CONFIGURAÇÃO DO ESTILO DO CORPO DA PÁGINA */
 body {
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
@@ -42,6 +19,7 @@ body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 img {
     max-width: 100%;
     height: auto;
@@ -60,6 +38,7 @@ img {
 h1 {
     color: var(--cor-destaque);
 }
+
 button {
     background-color: var(--cor-destaque);
     border: none;
@@ -68,17 +47,17 @@ button {
     color: var(--cor-principal);
     font-size: 1rem;
     cursor: pointer;
-    transition: backgraound-color 0.3s;
+    transition: background-color 0.3s; /* Corrigido: "backgraound-color" para "background-color" */
     border-radius: 10px;
 }
 
-/*Estilo do botao ao passar o mouse*/
+/* Estilo do botão ao passar o mouse */
 button:hover {
     background-color: var(--cor-fadeButtom);
     color: var(--cor-texto);
 }
 
-/*caixa de resultado*/
+/* Caixa de resultado */
 .caixa-resultado {
     display: none;
     text-align: center;
@@ -89,8 +68,9 @@ button:hover {
     border-radius: 8px;
 }
 
-/*caixa de resultado*/
+/* Classe para mostrar a caixa de resultado */
 .caixa-resultado.mostrar {
+    display: block; /* Adicionado para garantir que a caixa apareça */
     opacity: 1;
 }
 
