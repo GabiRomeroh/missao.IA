@@ -8,58 +8,58 @@ const textoResultado = document.querySelector(".texto-resultado");
 // Array de objetos contendo as perguntas e alternativas
 const perguntas = [
     {
-        enunciado: "Qual é o maior deserto do mundo?",
+        enunciado: "Qual a idade máxima que um cachorro pode chegar?",
         alternativas: [
-            "Antártica",
-            "Saara"
+            "15 anos",
+            "20 anos"
         ],
         correta: 0 // A primeira alternativa é a correta
     },
     {
-        enunciado: "Qual a fórmula da glicose?",
+        enunciado: "Quantos dias há em um ano bissexto?",
         alternativas: [
-            "C6H12O6",
-            "C10H16N5013P3"
-        ],
-        correta: 0 // A primeira alternativa é a correta
-    },
-    {
-        enunciado: "Qual empresa desenvolveu o sistema Windows?",
-        alternativas: [
-            "Apple",
-            "Microsoft"
+            "365",
+            "366"
         ],
         correta: 1 // A segunda alternativa é a correta
     },
     {
-        enunciado: "Quem é o capitão do navio Pérola Negra?",
+        enunciado: "Qual é o maior planeta do nosso sistema solar?",
         alternativas: [
-            "Jack Skellington",
-            "Jack Sparrow"
+            "Terra",
+            "Júpiter"
         ],
-        correta: 1 // A segunda alternativa é a correta
+        correta: 1
     },
     {
-        enunciado: "Qual o maior oceano do planeta Terra?",
+        enunciado: "Qual é a capital da França?",
         alternativas: [
-            "Oceano Pacífico",
-            "Oceano Atlântico"
+            "Paris",
+            "Londres"
         ],
-        correta: 0 // A primeira alternativa é a correta
+        correta: 0
+    },
+    {
+        enunciado: "Qual é a fórmula química da água?",
+        alternativas: [
+            "H2O",
+            "CO2"
+        ],
+        correta: 0
     }
 ];
 
-// Inicializa o índice da pergunta atual e a pontuação
 let atual = 0;
+let perguntaAtual; // Corrigido de "pergutaAtual" para "perguntaAtual"
 let pontuacao = 0;
 
 // FUNÇÃO MOSTRAR PERGUNTAS
 function mostrarPergunta() {
-    const perguntaAtual = perguntas[atual];
+    perguntaAtual = perguntas[atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
     caixaAlternativas.innerHTML = "";
 
-    perguntaAtual.alternativas.forEach((alternativa, index) => {
+    perguntaAtual.alternativas.forEach((alternativa, index) => { // Corrigido "pergutaAtual" para "perguntaAtual"
         const botao = document.createElement("button");
         botao.textContent = alternativa; // Adiciona o texto da alternativa ao botão
         botao.addEventListener("click", () => verificaResposta(index));
@@ -68,26 +68,5 @@ function mostrarPergunta() {
 }
 
 // FUNÇÃO VERIFICAR RESPOSTA
-function verificaResposta(seleciona) {
-    if (seleciona === perguntas[atual].correta) {
-        pontuacao++;
-    }
-    atual++;
-
-    if (atual < perguntas.length) {
-        mostrarPergunta();
-    } else {
-        mostrarResultado();
-    }
-}
-
-// FUNÇÃO MOSTRAR RESULTADO
-function mostrarResultado() {
-    caixaPerguntas.style.display = "none";
-    caixaAlternativas.style.display = "none";
-    caixaResultado.style.display = "block"; // Mostra a caixa de resultado
-    textoResultado.textContent = `Você acertou ${pontuacao} de ${perguntas.length} perguntas!`;
-}
-
-// Inicia o quiz mostrando a primeira pergunta
-mostrarPergunta();
+function verificaResposta(selecionada) { // Corrigido de "Seleciona" para "selecionada"
+    if (selecionada === perguntaAt
